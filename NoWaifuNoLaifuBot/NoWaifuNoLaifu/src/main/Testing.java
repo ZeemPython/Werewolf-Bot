@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -22,12 +23,12 @@ public class Testing {
 		populatePlayerList(); 	// populate player list based on num of players
 		randomUniqueRole();		// give a random unique role to each player, removing the role from the list as we go
 		
-		p.toString(playerList); //toString the entire list of players
-
+		//p.toString(playerList); //toString the entire list of players
+		
 	}
 	
 	public static int playerCount() {
-		System.out.println("How many players will there be?");
+		System.out.print("How many players will there be?: ");
 		numOfPlayers = sc.nextInt();
 		
 		return numOfPlayers;
@@ -40,7 +41,7 @@ public class Testing {
 		while (counter <= numOfPlayers) {
 			Player p = new Player();
 			
-			System.out.println("Type the name of Player " + counter);
+			System.out.print("Type the name of Player " + counter + ": ");
 			p.setName(sc.next());		
 			playerList.add(p);
 			counter++;
@@ -48,7 +49,7 @@ public class Testing {
 	}
 	
 	public static void randomUniqueRole() {
-		Random rand = new Random();
+		
 		
 		switch(numOfPlayers) {
 		
@@ -74,26 +75,33 @@ public class Testing {
 			
 		}
 		
-		giveRoles(ListOfRoles.roles);
+		giveRoles(ListOfRoles.roles, playerList);
 		
 	}
 	
-	public static void giveRoles(List<String> roles) {
+	public static void giveRoles(List<String> roles, List<Player> playerList) {
+		Random rand = new Random();
+		int x = rand.nextInt(roles.size());
 		
-		for (int i = 0; i < playerList.size(); i++) {
-
-			System.out.println(playerList.get(i).getName());
+		ListOfRoles.toString(roles);
+		
+		System.out.println("\n(Shuffled) Player Roles: ");
+		Collections.shuffle(roles);
+		
+	
+		//As you loop through the list, display a random role, then remove it from the list.
+		for (int i = 0; i < roles.size(); i++) {
+			
+			
+			//Player 1 is role, 2 role, 3 role, etc.
+			System.out.print(playerList.get(i).getName() + " " + roles.get(i) + " ");
+			//roles.remove(i);
 
 		}
-		
 	}
-
-	// players.add("azim");
-	// players.add("bilal");
-	// players.add("shahid");
 
 
 	// int r = rand.nextInt(players.size());
-	// int x = rand.nextInt(roles.size());
+	
 
 }

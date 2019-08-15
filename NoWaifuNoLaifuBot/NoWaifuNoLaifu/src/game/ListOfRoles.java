@@ -67,4 +67,18 @@ public class ListOfRoles {
 		
 	}
 	
+	public static void toString(List<String> roles) {
+
+		System.out.println("\nList of Roles: ");
+		
+		for (int i = 0; i < roles.size(); i++) {
+			
+			System.out.print(roles.get(i) + " ");
+
+		}
+		
+		System.out.println(" ");
+
+	}
+	
 }

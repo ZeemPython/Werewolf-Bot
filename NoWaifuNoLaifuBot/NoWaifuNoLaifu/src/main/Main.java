@@ -19,10 +19,10 @@ public class Main {
 	public static void main(String[] args) throws LoginException {
 
 		JDABuilder builder = new JDABuilder();
-		builder.setToken("MzM4MTU1NDcwMjYxMDU5NTg0.XTg3Ug.dryZSEQxHpEEPdlEjo1dP3VIiD0");
+		builder.setToken("MzM4MTU1NDcwMjYxMDU5NTg0.XVTfWg.Q6D6_IYJGfre7Vf386-JAEA9oHA");
 		builder.setStatus(OnlineStatus.ONLINE);
 		builder.setGame(Game.playing("with kids"));
-
+		
 		// Register listeners
 		builder.addEventListener(
 				

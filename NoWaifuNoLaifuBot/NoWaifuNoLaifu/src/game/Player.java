@@ -25,11 +25,13 @@ public class Player {
 
 	public void toString(List<Player> playerList) {
 
+		System.out.println("List of Players: ");
+
 		for (int i = 0; i < playerList.size(); i++) {
 
-			System.out.println(playerList.get(i).getName());
+			System.out.print(playerList.get(i).getName() + " ");
 
 		}
-
+		System.out.println("\n");
 	}
 }
